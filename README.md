@@ -2,7 +2,7 @@
 ![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/29371886/123751118-2ed2c580-d8d9-11eb-885f-822a40ea32e8.gif)
 ![ezgif com-gif-maker](https://user-images.githubusercontent.com/29371886/124223048-c9731480-db24-11eb-99c6-1cd9e211a744.gif)
 
-
+### Animation with view navigate 
 
     func animateTabBarChange(tabBarController: UITabBarController, to viewController: UIViewController) {
     
@@ -41,3 +41,30 @@
          }
          */
     }
+
+### ProgressHUD
+    func manageProgressHUD(){
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            ProgressHUD.colorAnimation = .blue
+
+    //            ProgressHUD.animationType = .lineScaling
+    //            ProgressHUD.animationType = .multipleCirclePulse
+    //            ProgressHUD.animationType = .circleRotateChase
+    //            ProgressHUD.animationType = .circleStrokeSpin
+    //            ProgressHUD.animationType = .circleStrokeSpin
+    //            ProgressHUD.animationType = .horizontalCirclesPulse
+    //            ProgressHUD.animationType = .lineScaling
+    //            ProgressHUD.animationType = .singleCirclePulse
+    //            ProgressHUD.animationType = .multipleCirclePulse
+    //            ProgressHUD.animationType = .circleSpinFade
+            ProgressHUD.animationType = .circleRotateChase
+            
+            ProgressHUD.show("processing..")
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            ProgressHUD.showSucceed()
+            }
+        }
+        
+    }
+    
